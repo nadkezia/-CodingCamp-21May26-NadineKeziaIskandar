@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Life Dashboard</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ── Header: Greeting + Dark Mode Toggle ── -->
+  <header class="header">
+    <div class="greeting-block">
+      <h1 id="greeting">Hello!</h1>
+      <p id="datetime" class="datetime"></p>
+    </div>
+    <button id="theme-toggle" class="btn-icon" aria-label="Toggle dark mode">
+      <span id="theme-icon">🌙</span>
+      <span id="theme-label">Dark Mode</span>
+    </button>
+  </header>
+
+  <main class="dashboard">
+
+    <!-- ── Focus Timer ── -->
+    <section class="card" id="timer-card">
+      <h2 class="card-title">Focus Timer</h2>
+      <div class="timer-display" id="timer-display">25:00</div>
+      <div class="timer-controls">
+        <button class="btn btn-primary"   id="timer-start">▶ Start</button>
+        <button class="btn btn-secondary" id="timer-stop">⏸ Stop</button>
+        <button class="btn btn-ghost"     id="timer-reset">↺ Reset</button>
+      </div>
+    </section>
+
+    <!-- ── To-Do List ── -->
+    <section class="card" id="todo-card">
+      <h2 class="card-title">To-Do List</h2>
+      <form class="todo-form" id="todo-form">
+        <input
+          type="text"
+          id="todo-input"
+          class="input"
+          placeholder="Add a new task…"
+          maxlength="120"
+          autocomplete="off"
+        />
+        <button type="submit" class="btn btn-primary">Add</button>
+      </form>
+      <ul class="todo-list" id="todo-list"></ul>
+    </section>
+
+    <!-- ── Quick Links ── -->
+    <section class="card" id="links-card">
+      <h2 class="card-title">Quick Links</h2>
+      <form class="link-form" id="link-form">
+        <input
+          type="text"
+          id="link-name"
+          class="input"
+          placeholder="Label (e.g. YouTube)"
+          maxlength="40"
+        />
+        <input
+          type="url"
+          id="link-url"
+          class="input"
+          placeholder="https://…"
+        />
+        <button type="submit" class="btn btn-primary">Add Link</button>
+      </form>
+      <div class="links-grid" id="links-grid"></div>
+    </section>
+
+  </main>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
